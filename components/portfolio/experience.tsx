@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
 
 const experiences = [
   {
@@ -46,7 +45,7 @@ const experiences = [
 
 export function Experience() {
   const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -74,7 +73,9 @@ export function Experience() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <h2 className="text-4xl font-bold text-foreground mb-12">Experience</h2>
+        <h2 className="text-4xl font-bold text-foreground mb-12">
+          Experience
+        </h2>
 
         <div className="space-y-8">
           {experiences.map((exp, idx) => (
@@ -88,9 +89,9 @@ export function Experience() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {idx !== experiences.length - 1 && (
-                  <div className="w-0.5 h-24 bg-border mt-4" />
-                )}
+
+                {/* Fixed: always show vertical line */}
+                <div className="w-0.5 h-24 bg-border mt-4" />
               </div>
 
               {/* Content */}
@@ -98,12 +99,15 @@ export function Experience() {
                 <h3 className="text-xl font-semibold text-foreground">
                   {exp.role}
                 </h3>
+
                 <p className="text-accent font-medium mb-1">
                   {exp.company}
                 </p>
+
                 <p className="text-sm text-muted-foreground mb-4">
                   {exp.period} • {exp.location}
                 </p>
+
                 <ul className="space-y-2">
                   {exp.bullets.map((bullet, bulletIdx) => (
                     <li
