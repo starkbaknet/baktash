@@ -1,0 +1,236 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
+import { Badge } from '@/components/ui/badge'
+import { ExternalLink, Github, Crown } from 'lucide-react'
+
+const projects = [
+  {
+    title: 'jobs.af',
+    category: 'Professional',
+    role: 'Backend Team Lead',
+    status: 'Live',
+    featured: true,
+    description: "Afghanistan's leading job board platform. Led the backend team in architecting and building a scalable job listing, search, and application system.",
+    tags: ['TypeScript', 'NestJS', 'PostgreSQL', 'REST API', 'Docker', 'Microservices', 'Team Leadership'],
+    github: '',
+    live: 'https://jobs.af',
+  },
+  {
+    title: 'AFEX Consultancy Platform',
+    category: 'Professional',
+    role: 'Backend Developer',
+    status: 'Live',
+    featured: false,
+    description: 'Full-featured consultancy platform for AFEX. Built the backend infrastructure, APIs, and content management system powering services, blog, and contact flows.',
+    tags: ['TypeScript', 'Next.js', 'PostgreSQL', 'REST API', 'Docker'],
+    github: '',
+    live: 'https://afex.space',
+  },
+  {
+    title: 'Skypen — ICT & Digital Transformation',
+    category: 'Professional',
+    role: 'Backend Developer',
+    status: 'Live',
+    featured: false,
+    description: 'Corporate technology platform for Skypen. Built and maintained backend services and API layer for software, cloud, AI, and cybersecurity offerings.',
+    tags: ['TypeScript', 'Tanstack Start', 'TailwindCSS', 'shadcn/ui', 'Docker'],
+    github: '',
+    live: 'https://skypen.net',
+  },
+  {
+    title: 'Project Vectorizer',
+    category: 'Open Source',
+    role: 'Solo Developer',
+    status: 'Open Source',
+    featured: true,
+    description: 'CLI tool that vectorizes entire codebases and exposes them via MCP (Model Context Protocol), enabling AI agents to understand and navigate large projects.',
+    tags: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'Vector Database', 'MCP', 'CLI', 'AI Tooling', 'Embeddings'],
+    github: 'https://github.com/starkbaknet/project-vectorizer',
+    live: '',
+  },
+  {
+    title: 'Job Recommendation System',
+    category: 'AI & ML',
+    role: 'Solo Developer',
+    status: 'Open Source',
+    featured: true,
+    description: 'High-performance job recommendation engine using vector embeddings and cosine similarity to deliver personalized, accurate job matches at scale.',
+    tags: ['TypeScript', 'Express.js', 'TypeORM', 'PostgreSQL', 'pgvector', 'Vector Embeddings', 'Cosine Similarity'],
+    github: 'https://github.com/starkbaknet/job-recommendation-system-ts',
+    live: '',
+  },
+  {
+    title: 'AI Image Detector',
+    category: 'AI & ML',
+    role: 'Solo Developer',
+    status: 'Open Source',
+    featured: false,
+    description: 'AI-powered image detection and classification system using computer vision models to analyze and classify images with high accuracy.',
+    tags: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'Computer Vision', 'Image Classification'],
+    github: 'https://github.com/starkbaknet/ai-image-dectector',
+    live: '',
+  },
+]
+
+const categories = ['All', 'Professional', 'Open Source', 'AI & ML']
+
+export function Projects() {
+  const [isVisible, setIsVisible] = useState(false)
+  const [activeCategory, setActiveCategory] = useState('All')
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.unobserve(entry.target)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  const filteredProjects = activeCategory === 'All' 
+    ? projects 
+    : projects.filter(p => p.category === activeCategory)
+
+  const getCardBorderColor = (category: string) => {
+    switch (category) {
+      case 'Professional':
+        return 'border-l-4 border-l-[#0284c7]'
+      case 'AI & ML':
+        return 'border-l-4 border-l-[#7C3AED]'
+      case 'Open Source':
+        return 'border-l-4 border-l-[#f59e0b]'
+      default:
+        return 'border-l-4 border-l-[#0284c7]'
+    }
+  }
+
+  return (
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
+      <div
+        ref={ref}
+        className={`max-w-6xl mx-auto transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
+        <h2 className="text-4xl font-bold text-foreground mb-8">Projects</h2>
+
+        {/* Filter Tabs */}
+        <div className="flex gap-2 mb-12 overflow-x-auto pb-2">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 py-2 text-sm font-medium whitespace-nowrap rounded-sm transition-all ${
+                activeCategory === category
+                  ? 'bg-accent text-accent-foreground'
+                  : 'bg-secondary text-foreground hover:bg-secondary/80'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProjects.map((project, idx) => (
+            <div
+              key={idx}
+              className={`bg-card border border-border ${getCardBorderColor(project.category)} rounded-md p-6 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 flex flex-col relative`}
+              style={{
+                animation: isVisible ? `fadeUpStagger 0.6s ease-out ${idx * 0.1}s forwards` : 'none',
+                opacity: isVisible ? 1 : 0,
+              }}
+            >
+              {/* Featured Crown */}
+              {project.featured && (
+                <div className="absolute top-4 right-4">
+                  <Crown size={18} className="text-accent" />
+                </div>
+              )}
+
+              {/* Header with Title and Role Badge */}
+              <div className="mb-3">
+                <h3 className="text-lg font-bold text-foreground pr-6">
+                  {project.title}
+                </h3>
+                <span className="text-xs font-medium text-accent-foreground bg-accent px-2.5 py-1 rounded-sm inline-block mt-2">
+                  {project.role}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-grow">
+                {project.description}
+              </p>
+
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="text-xs font-medium bg-secondary text-foreground px-2.5 py-1 rounded-sm">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Status and Links */}
+              <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
+                <span className="text-xs font-medium text-muted-foreground">
+                  {project.status}
+                </span>
+                <div className="flex gap-2">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-sm bg-secondary text-foreground hover:bg-accent hover:text-accent-foreground transition-colors text-xs font-medium"
+                    >
+                      <Github size={14} />
+                      <span className="hidden sm:inline">Code</span>
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-sm bg-accent text-accent-foreground hover:bg-accent/80 transition-colors text-xs font-medium"
+                    >
+                      <ExternalLink size={14} />
+                      <span className="hidden sm:inline">Live</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes fadeUpStagger {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+    </section>
+  )
+}
