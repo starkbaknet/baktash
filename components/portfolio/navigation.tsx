@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Download, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import ThemeToggle from '@/components/theme-toggle'
 
 const navLinks = [
@@ -99,13 +99,6 @@ export function Navigation() {
 
             <div className="flex items-center gap-2">
               <ThemeToggle />
-              <a
-                href="/resume.pdf"
-                className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors text-sm font-medium"
-              >
-                <Download size={16} />
-                <span className="hidden sm:inline">Resume</span>
-              </a>
               <button
                 type="button"
                 className="md:hidden p-2 rounded-lg border border-border text-foreground hover:bg-secondary transition-colors"
