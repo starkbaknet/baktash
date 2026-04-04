@@ -62,13 +62,13 @@ export function Contact() {
                 <span>github.com/starkbaknet</span>
               </a>
               <a
-                href="https://www.linkedin.com/in/mohammad-salim-8453a729b"
+                href="https://www.linkedin.com/in/salim-baktash-8453a729b"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors"
               >
                 <Linkedin size={20} />
-                <span>Mohammad Salim</span>
+                <span>Salim Baktash</span>
               </a>
               <a
                 href="https://x.com/StarkBakTec?t=LkhI8Ia-lewG7-_sZASoVA&s=09"
