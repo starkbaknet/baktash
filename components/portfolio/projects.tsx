@@ -71,6 +71,51 @@ const projects = [
     github: 'https://github.com/starkbaknet/ai-image-dectector',
     live: '',
   },
+  {
+    title: 'Job Portal Spam Detector',
+    category: 'AI & ML',
+    role: 'Solo Developer',
+    status: 'Open Source',
+    featured: false,
+    description:
+      'Python spam detection for job portals: zero-shot NLP (BART-MNLI), rule-based checks, metadata heuristics, and aggregated risk scoring with allow / shadow review / block actions—plus a FastAPI REST API.',
+    tags: ['Python', 'FastAPI', 'PyTorch', 'Transformers', 'NLP', 'REST API', 'Hugging Face'],
+    github: 'https://github.com/starkbaknet/spam-detector',
+    live: '',
+  },
+  {
+    title: 'Applicant–Job Matcher',
+    category: 'AI & ML',
+    role: 'Backend Developer',
+    status: 'Production',
+    featured: false,
+    description:
+      'Semantic applicant–job matching gRPC service (protobuf messages) with hybrid Sentence-Transformers and heuristic scoring and explainable factor breakdowns. Integrated into the jobs.af applicant tracking system.',
+    tags: ['Python', 'gRPC', 'Protobuf', 'Sentence-Transformers', 'scikit-learn', 'NLP'],
+    github: 'https://github.com/starkbaknet/applicant-job-matcher',
+    live: '',
+  },
+  {
+    title: "Smart Sarafi — Currency Exchange SaaS Platform",
+    category: "Professional",
+    role: "Full Stack Developer",
+    status: "Live",
+    featured: true,
+    description: "A comprehensive cloud-based platform for modern currency exchange businesses. Built and maintained the full-stack monorepo architecture including a NestJS backend, admin portals, and a multi-lingual React front-end.",
+    tags: [
+      "TypeScript",
+      "NestJS",
+      "React",
+      "TanStack Start",
+      "shadcn/ui",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Docker"
+    ],
+    github: "",
+    live: "https://smart-sarafi.skypen.net"
+  },  
 ]
 
 const categories = ['All', 'Professional', 'Open Source', 'AI & ML']
