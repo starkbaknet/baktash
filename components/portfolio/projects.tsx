@@ -27,9 +27,9 @@ const projects = [
   {
     title: 'AFEX Consultancy Platform',
     category: 'Professional',
-    role: 'Backend Developer',
+    role: 'Full Stack Developer',
     status: 'Live',
-    featured: false,
+    featured: true,
     description:
       'Full-featured consultancy platform for AFEX. Built the backend infrastructure, APIs, and content management system powering services, blog, and contact flows.',
     tags: ['TypeScript', 'Next.js', 'PostgreSQL', 'REST API', 'Docker'],
@@ -39,9 +39,9 @@ const projects = [
   {
     title: 'Skypen — ICT & Digital Transformation',
     category: 'Professional',
-    role: 'Backend Developer',
+    role: 'Full Stack Developer',
     status: 'Live',
-    featured: false,
+    featured: true,
     description:
       'Corporate technology platform for Skypen. Built and maintained backend services and API layer for software, cloud, AI, and cybersecurity offerings.',
     tags: [
@@ -101,7 +101,7 @@ const projects = [
     category: 'AI & ML',
     role: 'Solo Developer',
     status: 'Open Source',
-    featured: false,
+    featured: true,
     description:
       'AI-powered image detection and classification system using computer vision models to analyze and classify images with high accuracy.',
     tags: [
@@ -120,7 +120,7 @@ const projects = [
     category: 'AI & ML',
     role: 'Solo Developer',
     status: 'Open Source',
-    featured: false,
+    featured: true,
     description:
       'Python spam detection for job portals: zero-shot NLP (BART-MNLI), rule-based checks, metadata heuristics, and aggregated risk scoring with allow / shadow review / block actions—plus a FastAPI REST API.',
     tags: ['Python', 'FastAPI', 'PyTorch', 'Transformers', 'NLP', 'REST API', 'Hugging Face'],
@@ -130,9 +130,9 @@ const projects = [
   {
     title: 'Applicant–Job Matcher',
     category: 'AI & ML',
-    role: 'Backend Developer',
+    role: 'Solo Developer',
     status: 'Production',
-    featured: false,
+    featured: true,
     description:
       'Semantic applicant–job matching gRPC service (protobuf messages) with hybrid Sentence-Transformers and heuristic scoring and explainable factor breakdowns. Integrated into the jobs.af applicant tracking system.',
     tags: ['Python', 'gRPC', 'Protobuf', 'Sentence-Transformers', 'scikit-learn', 'NLP'],
