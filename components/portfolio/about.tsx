@@ -36,7 +36,7 @@ export function About() {
 
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
           <p>
-            I&apos;m a passionate backend and full-stack engineer with 4+ years of professional experience building scalable systems. Based in Afghanistan and working remotely for global opportunities. I&apos;m also a software engineering educator with 3+ years of teaching experience, mentoring developers and creating curriculum for modern web development.
+            I&apos;m a passionate backend and full-stack engineer with 5+ years of professional experience building scalable systems. Based in Afghanistan and working remotely for global opportunities. I&apos;m also a software engineering educator with 3+ years of teaching experience, mentoring developers and creating curriculum for modern web development.
           </p>
 
           <p>
