@@ -55,6 +55,27 @@ const projects = [
     live: 'https://skypen.net',
   },
   {
+    title: "Smart Sarafi — Currency Exchange SaaS Platform",
+    category: "Professional",
+    role: "Full Stack Developer",
+    status: "Live",
+    featured: true,
+    description: "A comprehensive cloud-based platform for modern currency exchange businesses. Built and maintained the full-stack monorepo architecture including a NestJS backend, admin portals, and a multi-lingual React front-end.",
+    tags: [
+      "TypeScript",
+      "NestJS",
+      "React",
+      "TanStack Start",
+      "shadcn/ui",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Docker"
+    ],
+    github: "",
+    live: "https://smart-sarafi.skypen.net"
+  }, 
+  {
     title: 'Project Vectorizer',
     category: 'Open Source',
     role: 'Solo Developer',
@@ -138,28 +159,7 @@ const projects = [
     tags: ['Python', 'gRPC', 'Protobuf', 'Sentence-Transformers', 'scikit-learn', 'NLP'],
     github: 'https://github.com/starkbaknet/applicant-job-matcher',
     live: '',
-  },
-  {
-    title: "Smart Sarafi — Currency Exchange SaaS Platform",
-    category: "Professional",
-    role: "Full Stack Developer",
-    status: "Live",
-    featured: true,
-    description: "A comprehensive cloud-based platform for modern currency exchange businesses. Built and maintained the full-stack monorepo architecture including a NestJS backend, admin portals, and a multi-lingual React front-end.",
-    tags: [
-      "TypeScript",
-      "NestJS",
-      "React",
-      "TanStack Start",
-      "shadcn/ui",
-      "PostgreSQL",
-      "Prisma",
-      "TailwindCSS",
-      "Docker"
-    ],
-    github: "",
-    live: "https://smart-sarafi.skypen.net"
-  },  
+  }, 
 ]
 
 const categories = ['All', 'Professional', 'Open Source', 'AI & ML']
