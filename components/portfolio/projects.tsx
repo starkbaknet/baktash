@@ -73,7 +73,7 @@ const projects = [
       "Docker"
     ],
     github: "",
-    live: "https://sk-sarafi.skypen.net"
+    live: "https://sky-sarafi.skypen.net"
   }, 
   {
     title: 'Project Vectorizer',
