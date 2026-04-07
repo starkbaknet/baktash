@@ -1,3 +1,19 @@
+/**
+
+Canonical origin for SEO (metadataBase, Open Graph, sitemap, JSON-LD).
+
+Prefer NEXT_PUBLIC_SITE_URL in production (e.g. https://yourdomain.com).
+
+On Vercel, VERCEL_URL is used when NEXT_PUBLIC_SITE_URL is unset.
+*/
+export function getSiteUrl(): string {
+const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(//$/, '')
+if (explicit) return explicit
+const vercel = process.env.VERCEL_URL?.replace(/^https?:///, '').replace(//$/, '')
+if (vercel) return https://${vercel}
+return 'http://localhost:3000'
+}
+
 export const SITE_NAME = 'Salim Baktash'
 
 export const SITE_TAGLINE =
