@@ -55,7 +55,7 @@ const projects = [
     live: 'https://skypen.net',
   },
   {
-    title: "Smart Sarafi — Currency Exchange SaaS Platform",
+    title: "Sky Sarafi — Currency Exchange SaaS Platform",
     category: "Professional",
     role: "Full Stack Developer",
     status: "Live",
@@ -73,7 +73,7 @@ const projects = [
       "Docker"
     ],
     github: "",
-    live: "https://smart-sarafi.skypen.net"
+    live: "https://sky-sarafi.skypen.net"
   }, 
   {
     title: 'Project Vectorizer',

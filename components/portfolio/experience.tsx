@@ -30,17 +30,19 @@ const experiences = [
     ],
   },
   {
-    role: 'Software Development Instructor',
-    company: 'Top In Town Technology',
-    period: '2021 – Oct 2023',
-    location: 'On-site',
-    logo: '/ttt.jpg',
-    bullets: [
-      'Taught full-stack development to 100+ students (Node.js, React, databases, architecture)',
-      'Mentored students to land developer jobs through real-world capstone projects',
-      'Created curriculum covering microservices, DevOps, and clean architecture',
-    ],
-  },
+  role: 'Software Engineer',
+  company: 'Top In Town Technology',
+  period: '2021 – Oct 2024',
+  location: 'On-site',
+  logo: '/ttt.jpg',
+  bullets: [
+    'Developed and maintained full-stack web applications using Node.js, React, and REST APIs',
+    'Designed scalable backend services and implemented clean architecture principles',
+    'Collaborated with cross-functional teams to deliver production-ready features on time',
+    'Optimized application performance and improved system reliability through refactoring and monitoring',
+    'Worked with relational and NoSQL databases (PostgreSQL, MongoDB) for efficient data handling',
+  ],
+}
 ]
 
 export function Experience() {

@@ -68,7 +68,7 @@ export function Hero() {
             <Github size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/mohammad-salim-8453a729b"
+            href="https://www.linkedin.com/in/salim-baktash-8453a729b"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-accent transition-colors"
